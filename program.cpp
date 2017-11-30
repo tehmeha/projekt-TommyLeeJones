@@ -1,6 +1,36 @@
 #include<iostream>
 using namespace std;
 
+int pretvori_oznaku_figure_u_broj(string oznaka_figure)
+{
+        int figura;
+            if( oznaka_figure == "K1" )
+                figura = 11;
+            else if( oznaka_figure== "K2" )
+                figura = 12;
+            else if(oznaka_figure=="Q1")
+                figura =21;
+            else if(oznaka_figure== "Q2")
+                figura =22;
+            else if(oznaka_figure=="B1")
+                figura =13;
+            else if(oznaka_figure== "B2")
+               figura =23;
+            else if(oznaka_figure=="K1")
+                figura =14;
+            else if(oznaka_figure== "K2")
+                figura =24;
+            else if(oznaka_figure=="R1")
+                figura =15;
+            else if(oznaka_figure=="R2")
+                figura =25;
+            else if (oznaka_figure=="P1")
+                figura =16;
+            else if(oznaka_figure=="P2")
+                figura =26;
+            return figura;
+
+}
 int main()
 {
     int polje[8][8]={{0,0,0,0,0,0,21,0},
@@ -11,14 +41,14 @@ int main()
              {0,25,0,0,0,0,13,11},
              {0,0,0,0,0,12,0,0},
              {25,24,0,0,0,0,15,0}};
-    cout<<"";
-    for(int i=0;i<8;i++)
-    {
-        cout<< i <<"  ";
-    }
-    cout<<endl<<"----------------------"<<endl;
     while(1)
     {
+        cout<<"   ";
+        for(int i=0;i<8;i++)
+        {
+            cout<< i <<"  ";
+        }
+        cout<<endl<<"-------------------------"<<endl;
     for (int i=0;i<8;i++)
     {
         cout<<i<<"I ";
@@ -63,32 +93,19 @@ int main()
     cout<<"Unesite stupac u koji zelite pomaknuti figuru:";
     cin>>stupac;
 
-    int figura;
-            if( oznaka_figure == "K1" )
-                figura = 11;
-            else if( oznaka_figure== "K2" )
-                figura = 12;
-            else if(oznaka_figure=="Q1")
-                figura =21;
-            else if(oznaka_figure== "Q2")
-                figura =22;
-            else if(oznaka_figure=="B1")
-                figura =13;
-            else if(oznaka_figure== "B2")
-               figura =23;
-            else if(oznaka_figure=="K1")
-                figura =14;
-            else if(oznaka_figure== "K2")
-                figura =24;
-            else if(oznaka_figure=="R1")
-                figura =15;
-            else if(oznaka_figure=="R2")
-                figura =25;
-            else if (oznaka_figure=="P1")
-                figura =16;
-            else if(oznaka_figure=="P2")
-                figura =26;
-    polje[redak][stupac]=figura;
+    int figura=pretvori_oznaku_figure_u_broj(oznaka_figure);
+        for (int i=0;i<8;i++)
+        {
+            for(int j=0;j<8;j++)
+            {
+                if(polje[i][j]==figura)
+                {
+                    polje[i][j]=0;
+                    break;
+                }
+            }
+        }
+        polje[redak][stupac]=figura;
     }
 
     return 0;
