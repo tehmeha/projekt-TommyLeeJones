@@ -7,9 +7,9 @@ int pretvori_oznaku_figure_u_broj(string oznaka_figure)
             if( oznaka_figure == "K1" )
                 figura = 11;
             else if( oznaka_figure== "K2" )
-                figura = 12;
+                figura = 21;
             else if(oznaka_figure=="Q1")
-                figura =21;
+                figura =12;
             else if(oznaka_figure== "Q2")
                 figura =22;
             else if(oznaka_figure=="B1")
